@@ -1,0 +1,45 @@
+form {
+    display: block;
+    position: relative;
+    width: fit-content;
+    margin: 3rem auto;
+}
+
+.searching-input {
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+    border: 1px solid gray;
+    width: 35rem;
+}
+
+.searching-input:focus ~ .searching-history {
+    display: block;
+}
+
+.searching-history {
+    position: absolute;
+    display: none;
+    bottom: 0;
+    left: 0;
+    width: 100%;    
+    background-color: white;
+    transform: translateY(100%);
+    padding: 1rem;
+    border-radius: .5rem;
+    border: 1px solid gray;
+}
+
+.buttons-delete {
+    display: flex;
+    gap: 1.5rem;
+    margin: 0 auto;
+    width: fit-content;
+    margin-bottom: 4rem;
+}
+
+.buttons-delete button {
+    background-color: brown;
+    border-radius: 2rem;
+    padding: .6rem 1rem;
+    color: white;
+}
