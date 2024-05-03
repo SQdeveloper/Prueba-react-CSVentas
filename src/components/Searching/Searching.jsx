@@ -26,7 +26,9 @@ const Searching = ({updateQuery}) => {
         //Busqueda actual
         const currentQuery = inputRef.current.value;
 
-        //here beabyyyyyyyyyyyyyyyyyyy
+        //Si la query esta vacia, no realizo la busqueda
+        if(currentQuery === '') return;
+
         //Actualizo la query para realizar la busqueda
         updateQuery(currentQuery)
 
@@ -75,11 +77,21 @@ const Searching = ({updateQuery}) => {
         })
     }, [])
 
+    //Funcipon que evita que se pongan espacios en blanco
+    const avoidGaps = (e)=>{
+        if(e.target.value == ' ') e.target.value = '';
+    }
+
+    const deleteCurrentSearch = (e)=>{
+        e.preventDefault();
+        inputRef.current.value = '';
+    }
+
     return (
         <>
             <form>
                 <div className="content-input">
-                    <input onClick={openHistory} ref={inputRef} className='searching-input' type="text" placeholder='search here...'/>
+                    <input onChange={avoidGaps} onClick={openHistory} ref={inputRef} className='searching-input' type="text" placeholder='Escribe aquí...'/>
                     {
                         <div style={{display: history.length > 0 ? 'block' : 'none'}} className="searching-history">                        
                             <ul>
@@ -89,6 +101,7 @@ const Searching = ({updateQuery}) => {
                             </ul>
                         </div>
                     }
+                    <button className='button-delete-current' onClick={deleteCurrentSearch}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16"><path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/></svg></button>            
                 </div>
                 <button className='button-search' onClick={handleSearch}>Search</button>            
             </form>

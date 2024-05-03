@@ -8,13 +8,17 @@ form {
 .content-input {
     position: relative;
     width: 100%;
+    border: 1px solid gray;
+    border-radius: 1rem;    
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
 }
 
 .searching-input {
-    padding: .5rem 1rem;
-    border-radius: 1rem;
-    border: 1px solid gray;
+    padding: .5rem 0;        
     width: 35rem;
+    border: none;
 }
 
 .searching-history {
@@ -66,6 +70,10 @@ form {
     border-radius: 2rem;
     padding: .6rem 1rem;
     color: white;
+}
+
+.button-delete-current {
+    margin: auto 0;
 }
 
 @media (max-width: 768px) {
