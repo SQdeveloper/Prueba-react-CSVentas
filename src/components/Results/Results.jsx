@@ -4,12 +4,14 @@ import './Results.css';
 const Results = ({data}) => {
     return (
         <div className='results'>
-            {data && 
+            {data.length > 0 ?
                 data.map((result)=>(
                 <section key={result.id} className="results-box">
                     <img src={result.images.fixed_width.url} alt={result.title} />
-                </section>
-            ))}
+                </section>))
+                :
+                <span className='results-message'>Lo siento, tu busqueda no fue encontrada.</span>
+            }
         </div>
     );
 };

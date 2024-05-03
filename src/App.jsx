@@ -13,10 +13,11 @@ function App() {
   }
 
   return (
-    <>
+    <section className='app'>
+      <h1 className='app-title'>GifExpertApp</h1>
       <Searching updateQuery={updateQuery}/>      
       <Results data={results}/> 
-    </> 
+    </section> 
   )
 }
 
