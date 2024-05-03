@@ -56,7 +56,7 @@ const Searching = ({updateQuery}) => {
                         </ul>
                     </div>
                 }
-                <button onClick={handleSearch}>Search</button>            
+                <button className='button-search' onClick={handleSearch}>Search</button>            
             </form>
             {history.length > 0 && 
                 <div className="buttons-delete">        
